@@ -1,0 +1,24 @@
+{
+  "type": "project",
+  "license": "proprietary",
+  "minimum-stability": "stable",
+  "require": {
+    "php": "^7.4",
+    "ext-json": "*",
+    "ext-redis": "*",
+    "php-amqplib/php-amqplib": "^2.12",
+    "vladimir163/lead-generator": "dev-master",
+    "vlucas/phpdotenv": "^5.3"
+  },
+  "require-dev": {
+  },
+  "config": {
+    "optimize-autoloader": true,
+    "sort-packages": true
+  },
+  "autoload": {
+    "psr-4": {
+      "App\\": "src/"
+    }
+  }
+}

@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+    php-cli:
+        container_name: test_php-cli
+        build:
+            context: ./service/php/cli
+            dockerfile: dockerfile
+        volumes:
+            - ./../:/var/www/html
+        restart: always
+        depends_on:
+            - rabbitmq
+        tty: true
+        init: true
+        working_dir: /var/www/html
+    rabbitmq:
+        image: rabbitmq:3.8.3-management
+        container_name: test_rabbitmq
+        ports:
+            - 15672:15672
+        restart: always
+        depends_on:
+            - redis
+    redis:
+        image: redis:6.0.10
+        container_name: test_redis
+        restart: always
