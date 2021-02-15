@@ -5,7 +5,7 @@
    docker exec test_php-cli /bin/bash -c "composer install --no-interaction --no-scripts"
 3) This command starts publisher (AMQP context):
    docker exec test_php-cli /bin/bash -c "php ./src/Command/generateLeads.php"
-4) This command starts consumer (AMQP context):
+4) This command starts consumers (AMQP context):
    docker exec test_php-cli /bin/bash -c "bash ./src/Command/processLeadsMultiplayer.sh"
    
 # Buisness-processes
